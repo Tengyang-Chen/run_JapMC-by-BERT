@@ -14,6 +14,7 @@ https://github.com/google-research/bert
 2.download BERT-Base, Multilingual Cased and unzip  
 3.unzip dataset  
 4.run run_suzuki.py  
+5.download janome https://drive.google.com/drive/folders/0BynvpNc_r0kSd2NOLU01TG5MWnc  
 change requirement.txt make sure to install gpu version  
 Directory tree  
 - bert/
