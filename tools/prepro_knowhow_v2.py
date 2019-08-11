@@ -62,14 +62,18 @@ def shuffle_QAC(examples_mixed):
         # print(answer_a, answer_b, flag)
         # break
 
-    examples_train, examples_dev = train_test_split(examples_mixed, shuffle=False, test_size=1/7)
+    examples_train, examples_dev = train_test_split(examples_mixed, shuffle=False, test_size=1/7)#1/7
     # print("len(train):%d" % (len(examples_train))) #len(train):613
     # print("len(dev):%d" % (len(examples_dev))) #len(dev):103
     # print("answerable:%d" % (answerable_count)) #answerable:1
+
     result_train= {'dataset': "train", 'data':examples_train}
     result_dev= {'dataset': "dev", 'data':examples_dev}
     result_checklist= {'dataset': "checklist", 'data':check_list}
     result_origin =  {'dataset': "origin", 'data':examples_origin}
+    # result_test= {'dataset': "test", 'data':examples_train}
+    # return result_train, result_checklist, result_origin
+
     return result_train, result_dev, result_checklist, result_origin
 
 def write2json(data, filename):
@@ -82,9 +86,10 @@ if __name__ == '__main__':
     files = ['../QAC_short_cv1_noconnect/knowhowQA_train.csv',
             '../QAC_short_cv1_noconnect/knowhowQA_dev.csv',
             '../QAC_short_cv1_noconnect/knowhowQA_test.csv']
+    # files = ['~/vscode/test/dataset/other/apartment/test-v2.2_neo.json']
 
     examples_mixed = load_data(files)
-    result_train, result_dev, result_checklist, result_origin = shuffle_QAC(examples_mixed)
+    result_train, result_checklist, result_origin = shuffle_QAC(examples_mixed)
 
     #wirte into file
 
@@ -92,6 +97,9 @@ if __name__ == '__main__':
     write2json(result_dev, './dev_v2.0_neo.json')
     write2json(result_checklist, './checklist.json')
     write2json(result_origin, './origin_v2.0_neo.json')
+
+    # write2json(result_train, '~/vscode/test/dataset/other/apartment/test-v2.3_neo.json')
+    # write2json(result_checklist,  '~/vscode/test/dataset/other/apartment/checklist.json')
 
 
     
