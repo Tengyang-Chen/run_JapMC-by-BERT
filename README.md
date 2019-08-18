@@ -1,4 +1,4 @@
-# knowhow
+# run_JapMC-by-BERT
 鈴木さんデータセットここにダウンロード  
 http://www.cl.ecei.tohoku.ac.jp/rcqa/  
 pip install tensorflow-gpu==1.11  
