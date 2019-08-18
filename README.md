@@ -5,7 +5,7 @@ pip install tensorflow-gpu==1.11
 conda install cudatoolkit=9  
 conda install cudnn=7  
 google bert https://github.com/google-research/bert  BERT-Base, Multilingual Cased (New, recommended)を使う　　
-python run_suzuki.py --vocab_file=./multi_cased_L-12_H-768_A-12/vocab.txt --bert_config_file=./multi_cased_L-12_H-768_A-12/bert_config.json --init_checkpoint=./multi_cased_L-12_H-768_A-12/bert_model.ckpt --do_train=True --train_file=./suzuki/train-v1.1.json --do_predict=True --predict_file=./suzuki/dev-v1.1.json --train_batch_size=8 --learning_rate=3e-5 --num_train_epochs=2.0 --max_seq_length=128 --doc_stride=128 --output_dir=./result/suzuki/ --do_lower_case=False --version_2_with_negative=True
+python run_suzuki.py --vocab_file=./multi_cased_L-12_H-768_A-12/vocab.txt --bert_config_file=./multi_cased_L-12_H-768_A-12/bert_config.json --init_checkpoint=./multi_cased_L-12_H-768_A-12/bert_model.ckpt --do_train=True --train_file=./suzuki/train-v1.1.json --do_predict=True --predict_file=./suzuki/dev-v1.1.json --train_batch_size=8 --learning_rate=3e-5 --num_train_epochs=2.0 --max_seq_length=320 --doc_stride=128 --output_dir=./result/suzuki/ --do_lower_case=False --version_2_with_negative=True
 
 
 https://github.com/google-research/bert  
